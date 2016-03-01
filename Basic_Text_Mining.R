@@ -1,5 +1,3 @@
-
-
 ### BASIC TEXT MINING ###
 
 #Building and cleaning the corpus from free text files, finding word frequencies and word associations, plotting word histograms, constructing word clouds
@@ -99,7 +97,7 @@ tdm <- TermDocumentMatrix(docs)
 
 #Exporting the text document matrix as .csv file
 tdm_mat <- as.matrix(tdm)
-tdm_mat_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "Tweets_TermDocumentMatrix_FS.csv", sep = "_" )
+tdm_mat_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "Data_TermDocumentMatrix_FS.csv", sep = "_" )
 
 write.csv(tdm_mat, tdm_mat_filename)
 
@@ -131,11 +129,15 @@ word_count <- word_count %>%
 
 
 #Exporting the word_count as a .csv file
-word_count_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "QBE_Tweets_word_count_FS.csv", sep = "_" )
+word_count_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "Data_word_count_FS.csv", sep = "_" )
 
 write.csv(word_count, word_count_filename)
 
 rm(word_count_filename)
+
+
+
+
 
 
 
@@ -176,7 +178,7 @@ p
 
 
 #setting the histogram filename (automated to today's date, with user initials)
-word_hist_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "df_all_histogram_FS.jpeg", sep = "_" )
+word_hist_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "Data_histogram_FS.jpeg", sep = "_" )
 
 #saving the histogram (built-in save function in ggplot2)
 ggsave(word_hist_filename)
@@ -193,7 +195,7 @@ rm(word_hist_filename)
 ### WORD CLOUD ###
 
 #setting the wordcloud filename (automated to today's date, with user initials)
-word_cloud_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "df_all_wordcloud_FS.jpeg", sep = "_" )
+word_cloud_filename <- paste(substring(gsub("-", "", Sys.Date()), 3), "Data_wordcloud_FS.jpeg", sep = "_" )
 
 #assigning jpeg format to the wordcloud
 jpeg(word_cloud_filename, width = 720, height = 720)
