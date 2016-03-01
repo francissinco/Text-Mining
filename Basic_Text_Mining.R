@@ -139,10 +139,6 @@ rm(word_count_filename)
 
 
 
-
-
-
-
 ### WORD ASSOCIATIONS ###
 
 #Minimum association coefficient
